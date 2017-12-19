@@ -13,7 +13,11 @@ bcList =list(range(0 ,15))
 #46，l48c最佳：
 #[7.9999999999999973, 6, 1, [9], 5, [3, 7, 8, 12, 13], 24, 8, 8, 0.3, 0.25, ['2-8-8.05', '3-8-7.65', '4-9-8.85', '5-9-9.2', '6-9-9.0', '7-9-8.3', '8-9-7.7', '9-10-8.4', '10-7-7.15', '11-8-8.2', '12-9-8.55', '13-10-8.6', '14-8-7.8', '15-9-9.15', '16-11-9.9']]
 
-
+#lc:上月最终价比45秒价格差
+#45p:45秒的价格
+#n:人数
+#w:额度数
+#p:最终价
 
 #针对人数
 wnList =[0.1 ,0.2 ,0.3 ,0.4 ,0.5]
@@ -21,8 +25,10 @@ wpList =[0.1 ,0.2 ,0.3 ,0.4 ,0.5 ,0.6 ,0.7 ,0.8 ,0.9]
 #针对48秒价差的差值
 wcList =[0.1 ,0.15 ,0.2 ,0.25 ,0.3 ,0.35 ,0.4 ,0.45 ,0.5]
 
-#一下所谓价格为48秒增量
+#一下所谓价格为46秒增量
+#bn ,blc ,btc ,wn ,wc
 #本次价格 =价格基准 +（这次人数-人数基准）*人差权重 +（上次价格基准 -上次价格）*价差权重
+#theC   =btc     +(tnList[index] -bn) *wn  +(blc -lcList[index]//100) *wc
 # print(round(7 +(18 -20) *0.2 +(7 -4) *0.4))
 
 
@@ -51,7 +57,7 @@ for bn in bnList:
                     count1 =0
                     countList1 =[]
                     allCount =0
-                    for index in range(2 ,17):
+                    for index in range(2 ,18):
                         theC =btc +(tnList[index] -bn) *wn +(blc -lcList[index]//100) *wc
                         absCount +=abs(theC -tcList[index]//100)
                         theList.append(str(index)  +'-' +str(tcList[index]//100) +'-' +str(theC))
@@ -74,11 +80,11 @@ for bn in bnList:
 
 allList.sort(key=lambda col:(col[1] ,col[2] ,col[0]))
 for index in range(1001):
-    # print(allList[index])
-    if allList[index][1] ==6 and allList[index][2] ==1:
-        print(allList[index][8] +(27 -allList[index][6]) *allList[index][9] +(allList[index][7] -9) *allList[index][10])
-    if allList[index][1] ==4 and allList[index][2] ==3:
-        print(allList[index][8] +(27 -allList[index][6]) *allList[index][9] +(allList[index][7] -9) *allList[index][10])
+    print(allList[index])
+    # if allList[index][1] ==6 and allList[index][2] ==1:
+    #     print(allList[index][8] +(27 -allList[index][6]) *allList[index][9] +(allList[index][7] -9) *allList[index][10])
+    # if allList[index][1] ==4 and allList[index][2] ==3:
+    #     print(allList[index][8] +(27 -allList[index][6]) *allList[index][9] +(allList[index][7] -9) *allList[index][10])
 
     # if allList[index][3] ==3:
     #     print(allList[index])
