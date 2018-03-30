@@ -17,6 +17,7 @@ w3List =[0.25 ,0.3 ,0.35 ,0.4 ,0.45]
 #出价时间
 # theList =['tn','tp','tc']
 data = pd.read_csv('../Datasets/chepai/theTime.csv')
+print(data)
 nList =data['tn'].values
 pList =data['tp_54'].values
 cList =data['47_54'].values
