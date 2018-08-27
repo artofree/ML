@@ -11,9 +11,9 @@ ccList =list(range(1 ,6))
 ttList =[54.0 ,54.5 ,55.0 ,55.5 ,56.0]
 
 # w1List =[0 ,0.1 ,0.2 ,0.3 ,0.4 ,0.5 ,0.6 ,0.7 ,0.8 ,0.9]
-w1List =[0.3 ,0.4 ,0.5 ,0.6 ,0.7]
-w2List =[0 ,0.1 ,0.2]
-w3List =[0.2 ,0.3 ,0.4 ,0.5]
+w1List =[0.25 ,0.3 ,0.35 ,0.4 ,0.45 ,0.5 ,0.55 ,0.6 ,0.65 ,0.7 ,0.75 ,0.8]
+w2List =[0 ,0.05 ,0.1 ,0.15 ,0.2]
+w3List =[0.1 ,0.15 ,0.2 ,0.25 ,0.3 ,0.35 ,0.4 ,0.45 ,0.5]
 
 #出价时间
 # theList =['tn','tp','tc']
@@ -73,7 +73,7 @@ for pp in ppList:
                         absCount =round(absCount ,2)
                         theSum =round(theSum ,3)
                         # if absCount not in absList or theSum not in sumList or zz not in zzList:
-                        if count <1 and zz <55.0:
+                        if count <3 and zz <55.0:
                             absList.append(absCount)
                             sumList.append(theSum)
                             zzList.append(zz)

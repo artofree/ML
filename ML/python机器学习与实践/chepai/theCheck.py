@@ -31,11 +31,12 @@ def theFun():
     theSum =round(theSum ,2)
     print([absCount ,count ,theSum ,countList ,theList])
 
+cList =data['47_53'].values
 nb ,pb ,cb ,tb ,nw ,pw ,cw =22, 17, 2, 55, 0.1, 0.1, 0.5
-# theFun()
+theFun()
 cList =data['47_53'].values
 nb ,pb ,cb ,tb ,nw ,pw ,cw =18, 10, 2, 56, 0, 0.1, 0.3
 theFun()
 cList =data['47_53'].values
 nb ,pb ,cb ,tb ,nw ,pw ,cw =18, 10, 2, 56.0, 0, 0.1, 0.45
-# theFun()
+theFun()

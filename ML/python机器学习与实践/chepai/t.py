@@ -1,63 +1,45 @@
 import numpy as np
 import pandas as pd
+import random ,time ,datetime
 
-nnList =list(range(18 ,29))
-ppList =list(range(1000 ,2500 ,100))
-ccList =[100 ,200 ,300]
-ttList =[53 ,53.5 ,54 ,54.5 ,55 ,55.5 ,56 ,56.5]
+# theStr ='sdf sd,f gr rg ol,id afij ,'
+# print(theStr.replace(' ' ,''))
 
-w1List =[0.1 ,0.2]
-w2List =[0.1 ,0.2]
-w3List =[0.3 ,0.4 ,0.5]
+# def fun():
+#     return
+#
+# p49 =700
+# p45 =700
+#
+#
+# if p49 ==600 or p49 ==700 and p45==700:
+#     fun()
+#     print(1)
 
-#出价时间
-# theList =['tn','tp','tc']
-data = pd.read_csv('../Datasets/chepai/time_53.csv')
-nList =data['tn'].values
-pList =data['tp'].values
-cList =data['tc'].values
-tList =data['tt'].values
 
-# print((nn -27) *0.1)
-# print((pp -2200) /100 *0.1)
-# print((cc -300) /100 *0.5)
+# while 1:
+#     if time.time() >1531458750 :
+#         print(random.randint(0 ,1))
+#         break
+#     time.sleep(0.1)
 
-#最佳值：22, 1700, 200, 55, 0.1, 0.1, 0.5
+# pFlag =3
+# isImgPriceCheck48 =1
+#
+# if pFlag !=3 or isImgPriceCheck48 !=1:
+#     print(1)
 
-allList =[]
+# basePrice =86300
+# imgPrice48 =87000
+# imgPrice45 =86900
+#
+# if (imgPrice48 - basePrice) < 700 or ((imgPrice48 - basePrice) == 700 and (imgPrice45 - basePrice) == 700):
+#     print(1)
 
-for nn in nnList:
-    for pp in ppList:
-        for cc in ccList:
-            for tt in ttList:
-                for w1 in w1List:
-                    for w2 in w2List:
-                        for w3 in w3List:
-                            absCount =0
-                            theList =[]
-                            count =0
-                            countList =[]
-                            for index in range(len(nList)):
-                                theT =tt +(nn -nList[index]) *w1 +(pp -pList[index])/100 *w2 +(cc -cList[index])/100 *w3
-                                theList.append(str(index)  +'-' +str(tList[index]) +'-' +str(theT))
-                                absCount +=abs(theT -tList[index])
-                                if tList[index] >theT +0.5 or tList[index] <theT -0.5:
-                                    count +=1
-                                    countList.append(index)
-                            allList.append([absCount ,count ,countList ,nn ,pp ,cc ,tt ,w1 ,w2 ,w3 ,theList])
-
-allList.sort(key=lambda col:(col[1] ,col[0]))
-for index in range(101):
-    print(allList[index])
+print(200/100)
 
 
 
 
 
 
-
-
-# for index in range(len(nList)):
-#     nList[index] =int(round(nList[index]/10000))
-#     theT =54.5 +(nn -nList[index]) *0.1 +(pp -pList[index])/100 *0.1 +(cc -cList[index])/100 *0.5
-#     print(str(index) +'---' +str(theT) +'---' +str(tList[index]) +'--:' +str(theT -tList[index]))

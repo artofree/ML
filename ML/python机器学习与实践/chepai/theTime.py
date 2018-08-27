@@ -11,13 +11,13 @@ ccList =list(range(1 ,6))
 ttList =[54.0 ,54.5 ,55.0 ,55.5 ,56.0]
 
 w1List =[0 ,0.05 ,0.1]
-w2List =[0.05 ,0.1 ,0.15]
-w3List =[0.25 ,0.3 ,0.35 ,0.4 ,0.45]
+w2List =[0 ,0.05 ,0.1 ,0.15]
+w3List =[0.2 ,0.25 ,0.3 ,0.35 ,0.4 ,0.45]
 
 #出价时间
 # theList =['tn','tp','tc']
 data = pd.read_csv('../Datasets/chepai/theTime.csv')
-print(data)
+# print(data)
 nList =data['tn'].values
 pList =data['tp_54'].values
 cList =data['47_54'].values
@@ -64,7 +64,8 @@ for nn in nnList:
 
                             absCount =round(absCount ,2)
                             theSum =round(theSum ,2)
-                            if absCount not in absList or theSum not in sumList:
+                            # if absCount not in absList or theSum not in sumList:
+                            if count <3:
                                 absList.append(absCount)
                                 sumList.append(theSum)
                                 allList.append([absCount ,count ,theSum ,countList ,nn ,pp ,cc ,tt ,w1 ,w2 ,w3 ,theList])
